@@ -367,10 +367,9 @@
     <section class="hero">
         <div class="container">
             <div class="badge-row">
-                <span class="badge lean">Lean 4.27.0</span>
-                <span class="badge coq">Coq 8.20.1</span>
-                <span class="badge verified">27 Theorems</span>
-                <span class="badge verified">0 Sorry</span>
+                <span class="badge lean">Lean 4</span>
+                <span class="badge coq">Coq 8.20</span>
+                <span class="badge verified">Formally Verified</span>
                 <span class="badge mit">MIT License</span>
             </div>
 
@@ -400,20 +399,20 @@
     <section class="container">
         <div class="stats">
             <div class="stat">
-                <div class="stat-value">27</div>
-                <div class="stat-label">Lean 4 Theorems</div>
-            </div>
-            <div class="stat">
-                <div class="stat-value">11</div>
-                <div class="stat-label">Coq Lemmas</div>
-            </div>
-            <div class="stat">
-                <div class="stat-value">0</div>
-                <div class="stat-label">Sorry / Admitted</div>
-            </div>
-            <div class="stat">
                 <div class="stat-value">60</div>
                 <div class="stat-label">Years Unsolved</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">O(k)</div>
+                <div class="stat-label">Complexity</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">100%</div>
+                <div class="stat-label">Exact</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">2</div>
+                <div class="stat-label">Proof Systems</div>
             </div>
         </div>
     </section>
@@ -520,28 +519,6 @@
                     <h3>Parallel Computing</h3>
                     <p>Division without breaking RNS parallelism. Scale to 64+ channels.</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Quick Start -->
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Quick Start</h2>
-            <p class="section-subtitle">
-                Verify the proofs yourself in under 5 minutes.
-            </p>
-
-            <div class="quickstart">
-                <h3>Lean 4</h3>
-                <pre><code>git clone https://github.com/Skyelabz210/k-elimination-lean4.git
-cd k-elimination-lean4
-lake build
-grep -r "sorry" KElimination.lean  # Should return nothing</code></pre>
-
-                <h3 style="margin-top: 24px;">Coq</h3>
-                <pre><code>coqc coq/K_Elimination.v
-# Prints: Closed under the global context (no axioms)</code></pre>
             </div>
         </div>
     </section>
