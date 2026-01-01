@@ -34,13 +34,31 @@ Proof.
   apply Nat.div_mod_eq.
 Qed.
 
+(** Local wrapper to avoid deprecated lemmas (Coq 8.17+) *)
+Lemma div_lt_when_lt_mul : forall X M A,
+  M > 0 -> X < A * M -> X / M < A.
+Proof.
+  intros X M A HM Hlt.
+  assert (HMne: M <> 0) by lia.
+  (* Key facts from stdlib *)
+  pose proof (Nat.div_mod_eq X M) as Heq.           (* X = M*(X/M) + X mod M *)
+  pose proof (Nat.mod_upper_bound X M HMne) as Hmod. (* X mod M < M *)
+  (* Prove by contradiction *)
+  destruct (Nat.lt_ge_cases (X / M) A) as [Hok | Hbad]; [exact Hok |].
+  (* If X/M >= A, then M*(X/M) >= M*A = A*M *)
+  assert (Hmul: A * M <= M * (X / M)).
+  { rewrite Nat.mul_comm. apply Nat.mul_le_mono_l. exact Hbad. }
+  (* But X = M*(X/M) + X mod M, so X >= M*(X/M) >= A*M *)
+  (* This contradicts X < A*M *)
+  lia.
+Qed.
+
 (** Range bound for k: X < M * A implies X / M < A *)
 Lemma k_range_bound : forall X M A,
   M > 0 -> A > 0 -> X < M * A -> X / M < A.
 Proof.
   intros X M A HM HA Hrange.
-  assert (H: X < A * M) by lia.
-  apply Nat.div_lt_upper_bound; lia.
+  apply div_lt_when_lt_mul; lia.
 Qed.
 
 (** k uniqueness: k < A implies k mod A = k *)
@@ -140,13 +158,14 @@ End KElimination.
    ============================================================================ *)
 
 (**
-  FULLY PROVEN (10/10 lemmas, no admits/axioms):
-  
-  ✓ division_identity     ✓ key_congruence
-  ✓ k_range_bound         ✓ reconstruction
-  ✓ k_uniqueness          ✓ reconstruction_def
-  ✓ remainder_bounds      ✓ k_elimination_core
-  ✓ main_residue_bounded  ✓ k_unique
+  FULLY PROVEN (11/11 lemmas, no admits/axioms):
+
+  ✓ division_identity       ✓ key_congruence
+  ✓ div_lt_when_lt_mul      ✓ reconstruction
+  ✓ k_range_bound           ✓ reconstruction_def
+  ✓ k_uniqueness            ✓ k_elimination_core
+  ✓ remainder_bounds        ✓ k_unique
+  ✓ main_residue_bounded
 *)
 
 Print Assumptions k_elimination_core.
