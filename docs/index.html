@@ -535,6 +535,13 @@
             border-radius: 16px;
             padding: 32px;
             backdrop-filter: blur(20px);
+            overflow: hidden;
+            max-width: 100%;
+        }
+
+        .quickstart h3 {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .quickstart pre {
@@ -546,6 +553,8 @@
             overflow-x: auto;
             margin: 16px 0;
             border: 1px solid var(--border);
+            white-space: pre-wrap;
+            word-break: break-all;
         }
 
         /* MANA Section */
@@ -621,6 +630,9 @@
             .formula-box { padding: 20px 24px; }
             .section { padding: 60px 0; }
             .footer-links { flex-direction: column; gap: 12px; }
+            .quickstart { padding: 20px; }
+            .quickstart h3 { font-size: 0.95rem; }
+            .quickstart pre { font-size: 0.75rem; padding: 14px; }
         }
 
         /* Scrollbar */
