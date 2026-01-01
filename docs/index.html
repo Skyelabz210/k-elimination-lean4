@@ -867,20 +867,20 @@ lake build</code></pre>
 
             <div class="grid-2">
                 <div class="card">
-                    <h3 class="card-title" style="color: var(--accent-green);">Early Benchmarks</h3>
+                    <h3 class="card-title" style="color: var(--accent-green);">Independent Benchmarks</h3>
                     <table class="comparison-table" style="margin-top: 16px; background: transparent;">
                         <tbody>
                             <tr>
+                                <td>K-Elimination Exact Div</td>
+                                <td>~29 ns</td>
+                            </tr>
+                            <tr>
                                 <td>Homomorphic Add</td>
-                                <td>~50 μs</td>
+                                <td>~3 μs</td>
                             </tr>
                             <tr>
-                                <td>Homomorphic Mul</td>
-                                <td>&lt;500 μs</td>
-                            </tr>
-                            <tr>
-                                <td>Encrypt</td>
-                                <td>&lt;1 ms</td>
+                                <td>Homo Mul (Plaintext)</td>
+                                <td>~22 μs</td>
                             </tr>
                             <tr>
                                 <td>Bootstrapping</td>
@@ -889,7 +889,7 @@ lake build</code></pre>
                         </tbody>
                     </table>
                     <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 16px;">
-                        *Preliminary results on consumer hardware.
+                        *Validated on Intel Xeon @ 2.50GHz (N=1024, Light config)
                     </p>
                 </div>
 
