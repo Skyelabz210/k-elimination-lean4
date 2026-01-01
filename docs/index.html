@@ -4,21 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>K-Elimination Theorem | Exact RNS Division</title>
-    <meta name="description" content="Formally verified solution to the 60-year RNS division problem. 27 Lean 4 theorems, 11 Coq lemmas, 0 sorry statements.">
+    <meta name="description" content="Formally verified solution to the 60-year RNS division problem. 27 Lean 4 theorems, 10 Coq lemmas, 0 sorry/admit.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-dark: #0d1117;
-            --bg-card: #161b22;
-            --border: #30363d;
-            --text: #c9d1d9;
-            --text-muted: #8b949e;
-            --accent: #58a6ff;
-            --accent-green: #3fb950;
-            --accent-purple: #a371f7;
-            --accent-orange: #f0883e;
+            --bg-dark: #080b12;
+            --bg-card: rgba(22, 27, 34, 0.9);
+            --border: #2a3140;
+            --text: #d6deea;
+            --text-muted: #93a2b8;
+            --accent: #61b0ff;
+            --accent-green: #4ade80;
+            --accent-purple: #c084fc;
+            --accent-orange: #f59e0b;
+            --shadow: 0 20px 60px rgba(0,0,0,0.35);
         }
 
         * {
@@ -29,7 +30,11 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg-dark);
+            background:
+                radial-gradient(circle at 20% 20%, rgba(97,176,255,0.08), transparent 25%),
+                radial-gradient(circle at 80% 0%, rgba(192,132,252,0.08), transparent 25%),
+                radial-gradient(circle at 50% 80%, rgba(79,222,128,0.05), transparent 28%),
+                var(--bg-dark);
             color: var(--text);
             line-height: 1.6;
         }
@@ -45,6 +50,16 @@
             padding: 80px 0 60px;
             text-align: center;
             border-bottom: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 20%, rgba(97,176,255,0.08), transparent 45%);
+            pointer-events: none;
         }
 
         .badge-row {
@@ -95,6 +110,7 @@
             padding: 24px 40px;
             display: inline-block;
             margin-bottom: 32px;
+            box-shadow: var(--shadow);
         }
 
         .formula {
@@ -115,10 +131,10 @@
             align-items: center;
             gap: 8px;
             padding: 12px 24px;
-            border-radius: 8px;
+            border-radius: 10px;
             font-weight: 600;
             text-decoration: none;
-            transition: all 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s, background 0.2s, border-color 0.2s;
         }
 
         .btn-primary {
@@ -128,6 +144,8 @@
 
         .btn-primary:hover {
             background: #79b8ff;
+            transform: translateY(-1px);
+            box-shadow: var(--shadow);
         }
 
         .btn-secondary {
@@ -138,6 +156,8 @@
 
         .btn-secondary:hover {
             border-color: var(--accent);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow);
         }
 
         /* Stats Section */
@@ -151,6 +171,11 @@
 
         .stat {
             text-align: center;
+            padding: 20px 10px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
         }
 
         .stat-value {
@@ -272,6 +297,7 @@
             border: 1px solid var(--border);
             border-radius: 12px;
             padding: 24px;
+            box-shadow: var(--shadow);
         }
 
         .card-title {
@@ -368,7 +394,7 @@
         <div class="container">
             <div class="badge-row">
                 <span class="badge lean">Lean 4</span>
-                <span class="badge coq">Coq 8.20</span>
+                <span class="badge coq">Coq 8.20.1</span>
                 <span class="badge verified">Formally Verified</span>
                 <span class="badge mit">MIT License</span>
             </div>
@@ -390,6 +416,9 @@
                 </a>
                 <a href="K_Elimination_Technical_Paper.pdf" class="btn btn-secondary">
                     Read the Paper (PDF)
+                </a>
+                <a href="KElimination_slides.md" class="btn btn-secondary">
+                    Slide Deck
                 </a>
             </div>
         </div>
@@ -518,6 +547,35 @@
                 <div class="app-card">
                     <h3>Parallel Computing</h3>
                     <p>Division without breaking RNS parallelism. Scale to 64+ channels.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proof Reproducibility -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Reproduce the Proofs</h2>
+            <p class="section-subtitle">Both proof assistants close without axioms. Run them locally:</p>
+            <div class="grid-2">
+                <div class="quickstart">
+                    <h3 style="color: var(--accent); margin-bottom: 8px;">Lean 4 (27 theorems, 0 sorry)</h3>
+                    <pre><code>git clone https://github.com/Skyelabz210/k-elimination-lean4.git
+cd k-elimination-lean4
+lake build
+# Expect: no sorry/admit</code></pre>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Toolchain: leanprover/lean4:v4.27.0-rc1</p>
+                </div>
+                <div class="quickstart">
+                    <h3 style="color: var(--accent-purple); margin-bottom: 8px;">Coq (10 lemmas, 0 admitted)</h3>
+                    <pre><code>coqc coq/K_Elimination.v
+coqtop -quiet -l coq/K_Elimination.v &lt;&lt;'EOF'
+Print Assumptions k_elimination_core.
+Print Assumptions k_unique.
+Quit.
+EOF
+# Expect: Closed under the global context</code></pre>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Toolchain: Coq 8.20.1</p>
                 </div>
             </div>
         </div>
