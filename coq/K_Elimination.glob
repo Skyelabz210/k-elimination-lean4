@@ -1,0 +1,282 @@
+DIGEST c62757bba73f44edc5d88efd0fd4a471
+FK_Elimination
+R224:228 Coq.Arith.Arith <> <> lib
+R246:248 Coq.micromega.Lia <> <> lib
+R266:273 Coq.Arith.PeanoNat <> <> lib
+def 504:517 <> overflow_count
+R526:528 Coq.Init.Datatypes <> nat ind
+binder 520:520 <> X:1
+binder 522:522 <> M:2
+R533:535 Coq.Init.Datatypes <> nat ind
+R541:543 Coq.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R540:540 K_Elimination <> X:1 var
+R544:544 K_Elimination <> M:2 var
+def 558:569 <> main_residue
+R578:580 Coq.Init.Datatypes <> nat ind
+binder 572:572 <> X:3
+binder 574:574 <> M:4
+R585:587 Coq.Init.Datatypes <> nat ind
+R593:597 Coq.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R592:592 K_Elimination <> X:3 var
+R598:598 K_Elimination <> M:4 var
+def 612:625 <> anchor_residue
+R634:636 Coq.Init.Datatypes <> nat ind
+binder 628:628 <> X:5
+binder 630:630 <> A:6
+R641:643 Coq.Init.Datatypes <> nat ind
+R649:653 Coq.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R648:648 K_Elimination <> X:5 var
+R654:654 K_Elimination <> A:6 var
+prf 921:937 <> division_identity
+binder 948:948 <> X:7
+binder 950:950 <> M:8
+R956:958 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R955:955 K_Elimination <> X:7 var
+R970:972 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R960:963 Coq.Init.Peano <> ::nat_scope:x_'*'_x not
+R969:969 Coq.Init.Peano <> ::nat_scope:x_'*'_x not
+R959:959 K_Elimination <> M:8 var
+R965:967 Coq.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R964:964 K_Elimination <> X:7 var
+R968:968 K_Elimination <> M:8 var
+R974:978 Coq.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R973:973 K_Elimination <> X:7 var
+R979:979 K_Elimination <> M:8 var
+R1011:1024 Coq.Arith.PeanoNat Nat div_mod_eq thm
+R1011:1024 Coq.Arith.PeanoNat Nat div_mod_eq thm
+prf 1099:1116 <> div_lt_when_lt_mul
+binder 1127:1127 <> X:9
+binder 1129:1129 <> M:10
+binder 1131:1131 <> A:11
+R1141:1144 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1137:1139 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R1136:1136 K_Elimination <> M:10 var
+R1154:1157 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1146:1148 Coq.Init.Peano <> ::nat_scope:x_'<'_x not
+R1145:1145 K_Elimination <> X:9 var
+R1150:1152 Coq.Init.Peano <> ::nat_scope:x_'*'_x not
+R1149:1149 K_Elimination <> A:11 var
+R1153:1153 K_Elimination <> M:10 var
+R1163:1165 Coq.Init.Peano <> ::nat_scope:x_'<'_x not
+R1159:1161 Coq.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R1158:1158 K_Elimination <> X:9 var
+R1162:1162 K_Elimination <> M:10 var
+R1166:1166 K_Elimination <> A:11 var
+R1216:1219 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
+R1216:1219 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
+R1275:1288 Coq.Arith.PeanoNat Nat div_mod_eq thm
+R1275:1288 Coq.Arith.PeanoNat Nat div_mod_eq thm
+R1355:1373 Coq.Arith.PeanoNat Nat mod_upper_bound def
+R1355:1373 Coq.Arith.PeanoNat Nat mod_upper_bound def
+R1455:1469 Coq.Arith.PeanoNat Nat lt_ge_cases thm
+R1473:1475 Coq.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R1455:1469 Coq.Arith.PeanoNat Nat lt_ge_cases thm
+R1473:1475 Coq.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R1582:1585 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R1578:1580 Coq.Init.Peano <> ::nat_scope:x_'*'_x not
+R1587:1590 Coq.Init.Peano <> ::nat_scope:x_'*'_x not
+R1596:1596 Coq.Init.Peano <> ::nat_scope:x_'*'_x not
+R1592:1594 Coq.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R1582:1585 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R1578:1580 Coq.Init.Peano <> ::nat_scope:x_'*'_x not
+R1587:1590 Coq.Init.Peano <> ::nat_scope:x_'*'_x not
+R1596:1596 Coq.Init.Peano <> ::nat_scope:x_'*'_x not
+R1592:1594 Coq.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R1612:1623 Coq.Arith.PeanoNat Nat mul_comm thm
+R1612:1623 Coq.Arith.PeanoNat Nat mul_comm thm
+R1612:1623 Coq.Arith.PeanoNat Nat mul_comm thm
+R1632:1648 Coq.Arith.PeanoNat Nat mul_le_mono_l thm
+R1632:1648 Coq.Arith.PeanoNat Nat mul_le_mono_l thm
+prf 1829:1841 <> k_range_bound
+binder 1852:1852 <> X:12
+binder 1854:1854 <> M:13
+binder 1856:1856 <> A:14
+R1866:1869 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1862:1864 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R1861:1861 K_Elimination <> M:13 var
+R1875:1878 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1871:1873 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R1870:1870 K_Elimination <> A:14 var
+R1888:1891 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1880:1882 Coq.Init.Peano <> ::nat_scope:x_'<'_x not
+R1879:1879 K_Elimination <> X:12 var
+R1884:1886 Coq.Init.Peano <> ::nat_scope:x_'*'_x not
+R1883:1883 K_Elimination <> M:13 var
+R1887:1887 K_Elimination <> A:14 var
+R1897:1899 Coq.Init.Peano <> ::nat_scope:x_'<'_x not
+R1893:1895 Coq.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R1892:1892 K_Elimination <> X:12 var
+R1896:1896 K_Elimination <> M:13 var
+R1900:1900 K_Elimination <> A:14 var
+R1947:1964 K_Elimination <> div_lt_when_lt_mul thm
+R1947:1964 K_Elimination <> div_lt_when_lt_mul thm
+prf 2031:2042 <> k_uniqueness
+binder 2053:2053 <> k:15
+binder 2055:2055 <> A:16
+R2065:2068 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2061:2063 Coq.Init.Peano <> ::nat_scope:x_'<'_x not
+R2060:2060 K_Elimination <> k:15 var
+R2064:2064 K_Elimination <> A:16 var
+R2076:2078 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R2070:2074 Coq.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R2069:2069 K_Elimination <> k:15 var
+R2075:2075 K_Elimination <> A:16 var
+R2079:2079 K_Elimination <> k:15 var
+R2114:2126 Coq.Arith.PeanoNat Nat mod_small def
+R2114:2126 Coq.Arith.PeanoNat Nat mod_small def
+prf 2199:2214 <> remainder_bounds
+binder 2225:2225 <> X:17
+binder 2227:2227 <> d:18
+R2237:2240 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2233:2235 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R2232:2232 K_Elimination <> d:18 var
+R2248:2250 Coq.Init.Peano <> ::nat_scope:x_'<'_x not
+R2242:2246 Coq.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R2241:2241 K_Elimination <> X:17 var
+R2247:2247 K_Elimination <> d:18 var
+R2251:2251 K_Elimination <> d:18 var
+R2286:2304 Coq.Arith.PeanoNat Nat mod_upper_bound def
+R2286:2304 Coq.Arith.PeanoNat Nat mod_upper_bound def
+prf 2355:2374 <> main_residue_bounded
+binder 2385:2385 <> X:19
+binder 2387:2387 <> M:20
+R2397:2400 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2393:2395 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R2392:2392 K_Elimination <> M:20 var
+R2408:2410 Coq.Init.Peano <> ::nat_scope:x_'<'_x not
+R2402:2406 Coq.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R2401:2401 K_Elimination <> X:19 var
+R2407:2407 K_Elimination <> M:20 var
+R2411:2411 K_Elimination <> M:20 var
+R2446:2464 Coq.Arith.PeanoNat Nat mod_upper_bound def
+R2446:2464 Coq.Arith.PeanoNat Nat mod_upper_bound def
+prf 2819:2832 <> key_congruence
+binder 2843:2843 <> X:21
+binder 2845:2845 <> M:22
+binder 2847:2847 <> A:23
+R2859:2861 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R2853:2857 Coq.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R2852:2852 K_Elimination <> X:21 var
+R2858:2858 K_Elimination <> A:23 var
+R2862:2862 Coq.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R2884:2889 Coq.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R2874:2876 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R2864:2867 Coq.Init.Peano <> ::nat_scope:x_'*'_x not
+R2873:2873 Coq.Init.Peano <> ::nat_scope:x_'*'_x not
+R2863:2863 K_Elimination <> M:22 var
+R2869:2871 Coq.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R2868:2868 K_Elimination <> X:21 var
+R2872:2872 K_Elimination <> M:22 var
+R2878:2882 Coq.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R2877:2877 K_Elimination <> X:21 var
+R2883:2883 K_Elimination <> M:22 var
+R2890:2890 K_Elimination <> A:23 var
+R2930:2943 Coq.Arith.PeanoNat Nat div_mod_eq thm
+R2930:2943 Coq.Arith.PeanoNat Nat div_mod_eq thm
+R2930:2943 Coq.Arith.PeanoNat Nat div_mod_eq thm
+prf 3184:3197 <> reconstruction
+binder 3208:3208 <> X:24
+binder 3210:3210 <> M:25
+R3216:3218 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R3215:3215 K_Elimination <> X:24 var
+R3230:3232 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R3220:3223 Coq.Init.Peano <> ::nat_scope:x_'*'_x not
+R3229:3229 Coq.Init.Peano <> ::nat_scope:x_'*'_x not
+R3219:3219 K_Elimination <> M:25 var
+R3225:3227 Coq.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R3224:3224 K_Elimination <> X:24 var
+R3228:3228 K_Elimination <> M:25 var
+R3234:3238 Coq.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R3233:3233 K_Elimination <> X:24 var
+R3239:3239 K_Elimination <> M:25 var
+R3271:3284 Coq.Arith.PeanoNat Nat div_mod_eq thm
+R3271:3284 Coq.Arith.PeanoNat Nat div_mod_eq thm
+prf 3301:3318 <> reconstruction_def
+binder 3329:3329 <> X:26
+binder 3331:3331 <> M:27
+R3337:3339 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R3336:3336 K_Elimination <> X:26 var
+R3362:3364 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R3341:3343 Coq.Init.Peano <> ::nat_scope:x_'*'_x not
+R3340:3340 K_Elimination <> M:27 var
+R3344:3357 K_Elimination <> overflow_count def
+R3359:3359 K_Elimination <> X:26 var
+R3361:3361 K_Elimination <> M:27 var
+R3365:3376 K_Elimination <> main_residue def
+R3378:3378 K_Elimination <> X:26 var
+R3380:3380 K_Elimination <> M:27 var
+R3413:3426 K_Elimination <> overflow_count def
+R3429:3440 K_Elimination <> main_residue def
+R3451:3464 Coq.Arith.PeanoNat Nat div_mod_eq thm
+R3451:3464 Coq.Arith.PeanoNat Nat div_mod_eq thm
+sec 3683:3694 <> KElimination
+var 3707:3707 KElimination M
+var 3709:3709 KElimination A
+R3713:3715 Coq.Init.Datatypes <> nat ind
+var 3729:3730 KElimination HM
+R3735:3737 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R3734:3734 K_Elimination <> KElimination.M var
+var 3752:3753 KElimination HA
+R3758:3760 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R3757:3757 K_Elimination <> KElimination.A var
+prf 3773:3790 <> k_elimination_core
+binder 3801:3801 <> X:36
+R3815:3820 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3807:3809 Coq.Init.Peano <> ::nat_scope:x_'<'_x not
+R3806:3806 K_Elimination <> X:36 var
+R3811:3813 Coq.Init.Peano <> ::nat_scope:x_'*'_x not
+R3810:3810 K_Elimination <> KElimination.M var
+R3814:3814 K_Elimination <> KElimination.A var
+R3830:3835 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R3826:3828 Coq.Init.Peano <> ::nat_scope:x_'<'_x not
+R3822:3824 Coq.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R3821:3821 K_Elimination <> X:36 var
+R3825:3825 K_Elimination <> KElimination.M var
+R3829:3829 K_Elimination <> KElimination.A var
+R3843:3845 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R3837:3841 Coq.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R3836:3836 K_Elimination <> X:36 var
+R3842:3842 K_Elimination <> KElimination.A var
+R3846:3846 Coq.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R3868:3873 Coq.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R3858:3860 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R3848:3851 Coq.Init.Peano <> ::nat_scope:x_'*'_x not
+R3857:3857 Coq.Init.Peano <> ::nat_scope:x_'*'_x not
+R3847:3847 K_Elimination <> KElimination.M var
+R3853:3855 Coq.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R3852:3852 K_Elimination <> X:36 var
+R3856:3856 K_Elimination <> KElimination.M var
+R3862:3866 Coq.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R3861:3861 K_Elimination <> X:36 var
+R3867:3867 K_Elimination <> KElimination.M var
+R3874:3874 K_Elimination <> KElimination.A var
+R3922:3934 K_Elimination <> k_range_bound thm
+R3922:3934 K_Elimination <> k_range_bound thm
+R3959:3972 K_Elimination <> key_congruence thm
+R3959:3972 K_Elimination <> key_congruence thm
+prf 3991:3998 <> k_unique
+binder 4009:4009 <> X:37
+R4023:4028 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4015:4017 Coq.Init.Peano <> ::nat_scope:x_'<'_x not
+R4014:4014 K_Elimination <> X:37 var
+R4019:4021 Coq.Init.Peano <> ::nat_scope:x_'*'_x not
+R4018:4018 K_Elimination <> KElimination.M var
+R4022:4022 K_Elimination <> KElimination.A var
+R4042:4044 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R4029:4029 Coq.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R4035:4040 Coq.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R4031:4033 Coq.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R4030:4030 K_Elimination <> X:37 var
+R4034:4034 K_Elimination <> KElimination.M var
+R4041:4041 K_Elimination <> KElimination.A var
+R4046:4048 Coq.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R4045:4045 K_Elimination <> X:37 var
+R4049:4049 K_Elimination <> KElimination.M var
+R4086:4097 K_Elimination <> k_uniqueness thm
+R4086:4097 K_Elimination <> k_uniqueness thm
+R4108:4120 K_Elimination <> k_range_bound thm
+R4108:4120 K_Elimination <> k_range_bound thm
+R4145:4156 K_Elimination KElimination <> sec
+R4707:4724 K_Elimination <> k_elimination_core thm
+R4745:4752 K_Elimination <> k_unique thm
+R4761:4778 K_Elimination <> k_elimination_core thm

@@ -171,6 +171,11 @@ This work was developed in collaboration with **Claude** (Anthropic), who contri
 
 MIT License — see [LICENSE](LICENSE)
 
+## Contact
+
+**Anthony Diaz** — Founder, HackFate.us Research
+Email: [founder@hackfate.us](mailto:founder@hackfate.us)
+
 ---
 
 **HackFate.us Research | January 2026**

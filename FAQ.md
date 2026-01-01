@@ -201,7 +201,7 @@ Yes! BibTeX:
 
 ### Where can I ask more questions?
 
-Open an issue on GitHub or contact HackFate.us Research.
+Open an issue on GitHub or contact **Anthony Diaz** at [founder@hackfate.us](mailto:founder@hackfate.us).
 
 ---
 
