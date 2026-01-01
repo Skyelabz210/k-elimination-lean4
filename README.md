@@ -72,6 +72,8 @@ k-elimination-lean4/
 ├── KElimination.lean          # Main formalization (27 theorems)
 ├── KElimination/
 │   └── Basic.lean             # Basic definitions
+├── coq/
+│   └── K_Elimination.v        # Coq cross-validation (10 lemmas)
 ├── docs/
 │   ├── K_Elimination_Technical_Paper.pdf   # 6-page paper
 │   ├── K_Elimination_Technical_Paper.tex   # LaTeX source
@@ -148,7 +150,7 @@ The theorem was independently verified in two proof systems:
 | System | Version | Theorems | Axioms | Status |
 |--------|---------|----------|--------|--------|
 | Lean 4 | 4.27.0 | 27 | 0 | ✅ |
-| Coq | 8.18.0 | 10 | 0 | ✅ |
+| Coq | 8.20.1 | 10 | 0 | ✅ |
 
 ## Citation
 

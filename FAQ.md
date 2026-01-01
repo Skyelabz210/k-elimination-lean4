@@ -75,7 +75,7 @@ Mathlib is a comprehensive mathematics library for Lean. We use it for modular a
 
 ### Was this verified in other systems?
 
-Yes! Cross-validated in Coq 8.18 with 10 additional theorems. Two independent proof systems, same result.
+Yes! Cross-validated in Coq 8.20.1 with 10 additional theorems. Two independent proof systems, same result.
 
 ### How do I verify it myself?
 

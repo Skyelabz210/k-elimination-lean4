@@ -13,7 +13,7 @@ The K-Elimination Theorem has been **formally verified** using two independent p
 | Proof System | Version | Lemmas Proven | Axioms Used | Build Status |
 |--------------|---------|---------------|-------------|--------------|
 | **Lean 4** | 4.26.0 | 21/21 | 0 | ✓ SUCCESS |
-| **Coq** | 8.18.0 | 10/10 | 0 | ✓ SUCCESS |
+| **Coq** | 8.20.1 | 10/10 | 0 | ✓ SUCCESS |
 
 **Total: 31 machine-checked proofs, 0 axioms, 0 sorry/admit**
 
@@ -592,11 +592,15 @@ lake build
 apt-get install coq
 
 # Compile
-coqc K_Elimination.v
+coqc coq/K_Elimination.v
 
 # Check assumptions
-coqtop -l K_Elimination.v -e "Print Assumptions k_elimination_core."
-# Expected output: Closed under the global context
+coqtop -quiet -l coq/K_Elimination.v <<'EOF'
+Print Assumptions k_elimination_core.
+Print Assumptions k_unique.
+Quit.
+EOF
+# Expected output: Closed under the global context (no axioms)
 ```
 
 ---
@@ -606,8 +610,8 @@ coqtop -l K_Elimination.v -e "Print Assumptions k_elimination_core."
 | File | Location | Description |
 |------|----------|-------------|
 | `KElimination.lean` | `KElimProofs/KElimProofs/` | Lean 4 proofs (21 lemmas) |
-| `K_Elimination.v` | `/mnt/user-data/outputs/` | Coq proofs (10 lemmas) |
-| `KElimProofs/` | `/mnt/user-data/outputs/` | Complete Lean 4 project |
+| `K_Elimination.v` | `coq/` | Coq proofs (10 lemmas) |
+| `KElimProofs/` | `KElimProofs/` | Complete Lean 4 project |
 
 ---
 
