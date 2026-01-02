@@ -557,6 +557,69 @@
             word-break: break-all;
         }
 
+        /* FAQ Section */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--border-glow);
+        }
+
+        .faq-item[open] {
+            border-color: var(--accent);
+            box-shadow: var(--glow-blue);
+        }
+
+        .faq-item summary {
+            padding: 16px 20px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text);
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-item summary::after {
+            content: "+";
+            color: var(--accent);
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+
+        .faq-item[open] summary::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item p {
+            padding: 0 20px 16px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .faq-grid { grid-template-columns: 1fr; }
+        }
+
         /* MANA Section */
         .mana-section {
             background: linear-gradient(135deg, rgba(97,176,255,0.03) 0%, rgba(192,132,252,0.05) 100%);
@@ -914,6 +977,77 @@ lake build</code></pre>
                         208 KB | Stripped binary | <a href="mailto:founder@hackfate.us?subject=MANA%20FHE%20Benchmark%20Results" style="color: var(--accent);">Send results</a>
                     </p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Deep Dive FAQ</h2>
+            <p class="section-subtitle">Technical questions answered.</p>
+
+            <div class="faq-grid">
+                <details class="faq-item">
+                    <summary>Why does K-Elimination work?</summary>
+                    <p>The core insight is the <strong>key congruence</strong>: X mod A = (X mod M + k·M) mod A. Since X = vₘ + k·M by definition, taking both sides mod A reveals that k·M is encoded in (vₐ - vₘ). Multiplying by M⁻¹ extracts k exactly because k < A.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>What are the requirements?</summary>
+                    <p><strong>Coprimality</strong>: gcd(M, A) = 1 — ensures M⁻¹ exists.<br>
+                    <strong>Range bound</strong>: X ∈ [0, M·A) — ensures k < A so k mod A = k.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>What if X ≥ M·A?</summary>
+                    <p>The formula gives k mod A, not k. For extended ranges: use <strong>anchor stacking</strong> (chain multiple anchors), <strong>tier promotion</strong> (fall back to arbitrary-precision), or <strong>range partitioning</strong> (M·A-sized chunks).</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>How is M⁻¹ computed?</summary>
+                    <p>Extended Euclidean Algorithm gives M⁻¹ in O(log A). For fixed A, precompute once — then each division is O(1).</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>What's the relationship to CRT?</summary>
+                    <p>Complementary. CRT reconstructs X from residues; K-Elimination extracts the quotient directly without full reconstruction. For division by M: K-Elimination is O(k) vs CRT's O(k²).</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Why is it so fast (26-29 ns)?</summary>
+                    <p>Three modular operations: two mod (already have vₐ, vₘ), one multiply, one mod. No loops, no iteration, no reconstruction. Algebraically direct.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>How does this enable bootstrap-free FHE?</summary>
+                    <p>FHE rescaling divides ciphertext coefficients. Traditional methods need bootstrapping or use floating-point (drift). K-Elimination provides exact integer division — no bootstrapping, no drift.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>What is "zero-drift" arithmetic?</summary>
+                    <p>In CKKS, rescaling errors compound. K-Elimination's 100% exactness means no drift — the 1000th operation is as precise as the first.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Can it handle signed numbers?</summary>
+                    <p>Yes. Use offset encoding: [-N, N) → [0, 2N). Apply K-Elimination, then re-center. Coprimality and range requirements apply to encoded values.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>What about multi-level RNS?</summary>
+                    <p>For k-level RNS with moduli M₁...Mₖ, apply K-Elimination iteratively or use anchor stacking. The key congruence generalizes to each level.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Connection to Montgomery reduction?</summary>
+                    <p>Complementary. Montgomery handles modular multiplication; K-Elimination handles exact division. Montgomery keeps you in residue form for mul; K-Elimination lets you divide without leaving it.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Was AI used in development?</summary>
+                    <p>Yes. Developed by HackFate.us Research with Claude (Anthropic). Mathematical insight and vision from the human; rapid iteration and formalization from Claude. Neither could have closed this alone.</p>
+                </details>
             </div>
         </div>
     </section>
