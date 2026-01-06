@@ -1,7 +1,7 @@
-(* 
+(*
   K-Elimination Theorem: Formal Proofs in Coq
-  
-  Author: HackFate.us Research
+
+  Author: QMNF Advanced Mathematics
   Date: January 1, 2026
   
   Main Result: For X ∈ [0, M·A) where gcd(M, A) = 1:

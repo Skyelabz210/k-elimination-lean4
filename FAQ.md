@@ -186,7 +186,7 @@ K-Elimination is a deterministic mathematical operation — no timing variabilit
 
 ### Was AI used in development?
 
-Yes. This work was developed by HackFate.us Research in collaboration with Claude (Anthropic). The collaboration involved proof strategy, Lean/Coq debugging, and documentation. The mathematical insight and architectural vision came from the human; rapid iteration and formalization from Claude. Neither could have closed this alone.
+Yes. This work was developed by QMNF Advanced Mathematics in collaboration with Claude (Anthropic). The collaboration involved proof strategy, Lean/Coq debugging, and documentation. The mathematical insight and architectural vision came from the human; rapid iteration and formalization from Claude. Neither could have closed this alone.
 
 ---
 
@@ -236,8 +236,8 @@ TFHE-rs operations are in tens to hundreds of milliseconds due to Programmable B
 
 ```bibtex
 @misc{kelimination2026,
-  title={K-Elimination: Formal Verification of Exact Division in Residue Number Systems},
-  author={HackFate.us Research and Claude (Anthropic)},
+  title={K-Elimination: Exact Division in Residue Number Systems},
+  author={QMNF Advanced Mathematics and Claude (Anthropic)},
   year={2026},
   url={https://github.com/Skyelabz210/k-elimination-lean4}
 }

@@ -156,8 +156,8 @@ The theorem was independently verified in two proof systems:
 
 ```bibtex
 @misc{kelimination2026,
-  title={K-Elimination Theorem: Formal Verification of Exact Division in Residue Number Systems},
-  author={HackFate.us Research and Claude (Anthropic)},
+  title={K-Elimination: Exact Division in Residue Number Systems},
+  author={Diaz, Anthony},
   year={2026},
   url={https://github.com/Skyelabz210/k-elimination-lean4}
 }
@@ -173,9 +173,8 @@ MIT License — see [LICENSE](LICENSE)
 
 ## Contact
 
-**Anthony Diaz** — Founder, HackFate.us Research
-Email: [founder@hackfate.us](mailto:founder@hackfate.us)
+Anthony Diaz — founder@hackfate.us
 
 ---
 
-**HackFate.us Research | January 2026**
+**QMNF Advanced Mathematics | January 2026**

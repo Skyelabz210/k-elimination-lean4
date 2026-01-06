@@ -2,7 +2,7 @@
   K-Elimination: Exact Division in Residue Number Systems
 
   A 60-Year Breakthrough in RNS Arithmetic
-  HackFate.us Research, December 2025
+  QMNF Advanced Mathematics, December 2025
 
   Formalized in Lean 4 with Mathlib
 -/

@@ -2,7 +2,7 @@ MANA FHE Benchmark - Early Access Binary
 =========================================
 
 PROPRIETARY SOFTWARE - ALL RIGHTS RESERVED
-Copyright (c) 2026 HackFate.us Research
+Copyright (c) 2026 QMNF Advanced Mathematics
 
 This is a stripped benchmark binary for independent performance validation.
 The K-Elimination theorem (MIT licensed) is separate from this proprietary FHE system.
@@ -51,4 +51,4 @@ Redistribution, reverse engineering, or commercial use is prohibited.
 The K-Elimination theorem (github.com/Skyelabz210/k-elimination-lean4) remains MIT licensed.
 
 ---
-HackFate.us Research | January 2026
+QMNF Advanced Mathematics | January 2026

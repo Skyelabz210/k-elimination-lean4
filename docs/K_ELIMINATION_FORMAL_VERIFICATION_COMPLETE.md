@@ -1,6 +1,6 @@
 # K-Elimination Theorem: Complete Formal Verification
 
-**Author:** HackFate.us Research  
+**Author:** QMNF Advanced Mathematics
 **Date:** January 1, 2026  
 **Status:** VERIFIED ✓
 
@@ -65,8 +65,8 @@ cd KElimProofs && lake build
 ```lean
 /-
   K-Elimination Theorem: Complete Formal Proofs in Lean 4
-  
-  Author: HackFate.us Research
+
+  Author: QMNF Advanced Mathematics
   Date: January 1, 2026
   
   Main Result: For X ∈ [0, M·A) where gcd(M, A) = 1:
@@ -356,8 +356,8 @@ Print Assumptions k_elimination_core.
 ```coq
 (* 
   K-Elimination Theorem: Formal Proofs in Coq
-  
-  Author: HackFate.us Research
+
+  Author: QMNF Advanced Mathematics
   Date: January 1, 2026
   
   Main Result: For X ∈ [0, M·A) where gcd(M, A) = 1:

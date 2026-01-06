@@ -6,7 +6,7 @@ Binary:         mana_fhe_benchmark
 Version:        1.0.0
 Build Date:     January 2026
 Platform:       Linux x86_64
-Publisher:      HackFate.us Research
+Publisher:      QMNF Advanced Mathematics
 
 --------------------------------------------------------------------------------
 INTEGRITY VERIFICATION
@@ -60,7 +60,7 @@ CONTACT
 --------------------------------------------------------------------------------
 
 Publisher:      Anthony Diaz
-Organization:   HackFate.us Research
+Organization:   QMNF Advanced Mathematics
 Email:          founder@hackfate.us
 Website:        https://skyelabz210.github.io/k-elimination-lean4/
 Repository:     https://github.com/Skyelabz210/k-elimination-lean4

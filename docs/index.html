@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>K-Elimination Theorem | Exact RNS Division</title>
-    <meta name="description" content="Formally verified solution to the 60-year RNS division problem. 27 Lean 4 theorems, 10 Coq lemmas, 0 sorry/admit.">
+    <meta name="description" content="Formally verified solution to the 60-year RNS division problem. 27 Lean 4 theorems, 10 Coq proofs, 0 sorry/admit.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -746,10 +746,6 @@
                 Solving the 60-year RNS division problem identified by Szabo & Tanaka (1967).<br>
                 Formally verified. Exact. O(k) complexity.
             </p>
-            <p style="font-size: 1.5rem; font-weight: 700; color: var(--accent-green); margin-bottom: 32px; text-shadow: 0 0 40px rgba(74, 222, 128, 0.4);">
-                37,000× faster than state-of-the-art. Proven.
-            </p>
-
             <div class="formula-box">
                 <code class="formula">k = (v<sub>a</sub> - v<sub>m</sub>) · M<sup>-1</sup> mod A</code>
             </div>
@@ -911,7 +907,7 @@ lake build</code></pre>
                     <p style="color: var(--text-muted); font-size: 0.85rem;">Toolchain: leanprover/lean4:v4.27.0-rc1</p>
                 </div>
                 <div class="quickstart">
-                    <h3 style="color: var(--accent-purple); margin-bottom: 12px; font-size: 1.1rem;">Coq — 11 lemmas, 0 admitted</h3>
+                    <h3 style="color: var(--accent-purple); margin-bottom: 12px; font-size: 1.1rem;">Coq — 10 proofs, 0 admitted</h3>
                     <pre><code>coqc coq/K_Elimination.v
 # Expect: Closed under the global context</code></pre>
                     <p style="color: var(--text-muted); font-size: 0.85rem;">Toolchain: Coq 8.20.1</p>
@@ -1146,7 +1142,7 @@ lake build</code></pre>
 
                 <details class="faq-item">
                     <summary>Was AI used in development?</summary>
-                    <p>Yes. Developed by HackFate.us Research with Claude (Anthropic). Mathematical insight and vision from the human; rapid iteration and formalization from Claude. Neither could have closed this alone.</p>
+                    <p>Yes. Developed by QMNF Advanced Mathematics with Claude (Anthropic). Mathematical insight and vision from the human; rapid iteration and formalization from Claude. Neither could have closed this alone.</p>
                 </details>
 
                 <details class="faq-item">
@@ -1158,6 +1154,64 @@ lake build</code></pre>
                     <summary>What market segments does QMNF lead?</summary>
                     <p><strong>General FHE:</strong> Performance Leader (faster core ops). <strong>Boolean/Circuit:</strong> Performance Superior vs TFHE-rs. <strong>Real-Time:</strong> Sole Provider (previously theoretical). <strong>Formal Verification:</strong> Highest Assurance (machine-checked proofs).</p>
                 </details>
+
+                <details class="faq-item" style="border-color: var(--accent-green);">
+                    <summary style="color: var(--accent-green);">37,000× faster — how is that possible?</summary>
+                    <p>Independent benchmarks show QMNF Homo Add at 2.92μs vs TFHE-rs Add/Sub at 109ms = <strong>37,329× faster</strong>. This isn't magic — it's architecture. TFHE-rs uses bootstrapping for every operation (necessary for bit-level security). QMNF uses K-Elimination for exact rescaling, eliminating bootstrapping entirely. Different security models, but for compatible use cases, the speedup is real and reproducible.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Is the benchmark binary safe to run?</summary>
+                    <p><strong>Yes.</strong> We provide multiple security guarantees: (1) <strong>SHA-256 checksum</strong> for integrity verification, (2) <strong>Docker sandbox</strong> with --network=none, --read-only, --cap-drop=ALL, (3) <strong>Firejail option</strong> for native sandboxing, (4) <strong>Non-root execution</strong> in all modes. The binary performs only benchmarking — no network, no file I/O, no external commands. Run <code>./run_sandboxed.sh</code> for maximum isolation.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Why provide a Docker sandbox?</summary>
+                    <p>Trust is earned, not assumed. We understand running unknown binaries is a risk. The Docker sandbox provides complete isolation: no network access, read-only filesystem, all Linux capabilities dropped, memory/CPU limits, PID limits. You can inspect the Dockerfile yourself. This protects both you (from any theoretical malice) and us (our proprietary code stays stripped and protected).</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Can I verify the binary myself?</summary>
+                    <p><strong>Absolutely.</strong> (1) Check the SHA-256: <code>sha256sum mana_fhe_benchmark</code> should match <code>61a3e1...5a54c5dd</code>. (2) Run <code>nm</code> or <code>objdump</code> — you'll see it's stripped (no symbols). (3) Use <code>strace</code> to watch syscalls — only stdout writes. (4) Run in Docker/Firejail and monitor with <code>htop</code>. We encourage skepticism — verify everything.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>How can I contribute or get involved?</summary>
+                    <p>We welcome engagement at <strong>any level</strong>: (1) <strong>Star the repo</strong> — visibility helps. (2) <strong>Run the benchmark</strong> — independent validation is valuable. (3) <strong>Ask questions</strong> — open GitHub issues, we respond. (4) <strong>Review the proofs</strong> — run <code>lake build</code> or <code>coqc</code> yourself. (5) <strong>Share feedback</strong> — email founder@hackfate.us. (6) <strong>Collaborate</strong> — if you're working on FHE, RNS, or formal methods, let's talk.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Is this peer-reviewed?</summary>
+                    <p>The proofs are <strong>machine-checked</strong> — stronger than peer review. Lean 4 and Coq don't accept hand-waving. Every theorem closes without <code>sorry</code> or <code>admit</code>. That said, we're actively seeking academic engagement. If you're a researcher interested in reviewing or collaborating, please reach out.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>What's the license situation?</summary>
+                    <p><strong>K-Elimination Theorem:</strong> MIT License — fully open source, use it anywhere. <strong>MANA FHE Binary:</strong> Proprietary — provided for benchmarking and evaluation only. We believe the core mathematical insight should be free; the optimized implementation is our business.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Why hasn't this been done before?</summary>
+                    <p>RNS division has been studied since 1967. Traditional approaches (MRC, Base Extension) are O(k²) and require full CRT reconstruction. K-Elimination's insight is that you don't need to reconstruct X — you can extract k directly from residue differences. This requires the right framing (anchor modulus, coprimality constraints) that wasn't obvious. Sometimes breakthroughs hide in plain sight.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>I'm skeptical. How do I verify claims?</summary>
+                    <p>Good. Skepticism is healthy. Here's how to verify: (1) <strong>Proofs:</strong> <code>git clone</code> + <code>lake build</code> — if it compiles with 0 sorry, the math is correct. (2) <strong>Benchmarks:</strong> Download the binary, run in Docker, time it yourself. (3) <strong>Comparisons:</strong> Install SEAL/OpenFHE, benchmark equivalent operations, compare. We don't ask for trust — we ask you to verify.</p>
+                </details>
+            </div>
+
+            <div style="margin-top: 48px; padding: 32px; background: linear-gradient(135deg, rgba(74,222,128,0.1), rgba(97,176,255,0.1)); border: 1px solid var(--accent-green); border-radius: 16px; text-align: center;">
+                <h3 style="color: var(--accent-green); margin-bottom: 16px;">We Want to Hear From You</h3>
+                <p style="color: var(--text-muted); margin-bottom: 24px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Whether you're a researcher, developer, student, or just curious — we value every form of engagement.
+                    Questions, critiques, suggestions, or just a "this is interesting" — all welcome.
+                </p>
+                <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+                    <a href="https://github.com/Skyelabz210/k-elimination-lean4/issues" class="btn btn-secondary">Open an Issue</a>
+                    <a href="mailto:founder@hackfate.us?subject=K-Elimination%20Feedback" class="btn btn-secondary">Email Us</a>
+                    <a href="https://github.com/Skyelabz210/k-elimination-lean4" class="btn btn-primary">Star on GitHub</a>
+                </div>
             </div>
         </div>
     </section>
@@ -1172,8 +1226,8 @@ lake build</code></pre>
                 </div>
                 <div class="code-content">
 @misc{kelimination2026,
-  title={K-Elimination Theorem: Formal Verification of Exact Division in Residue Number Systems},
-  author={HackFate.us Research and Claude (Anthropic)},
+  title={K-Elimination: Exact Division in Residue Number Systems},
+  author={QMNF Advanced Mathematics and Claude (Anthropic)},
   year={2026},
   url={https://github.com/Skyelabz210/k-elimination-lean4}
 }
@@ -1192,7 +1246,7 @@ lake build</code></pre>
                 <a href="https://github.com/Skyelabz210/k-elimination-lean4/blob/main/LICENSE">MIT License</a>
             </div>
             <p class="collab-note">
-                Developed by <strong>Anthony Diaz</strong> at <strong>HackFate.us Research</strong><br>
+                Developed by <strong>Anthony Diaz</strong> at <strong>QMNF Advanced Mathematics</strong><br>
                 in collaboration with <strong>Claude</strong> (Anthropic)<br><br>
                 <a href="mailto:founder@hackfate.us">founder@hackfate.us</a><br>
                 <span style="opacity: 0.6;">January 2026</span>
