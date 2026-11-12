@@ -1,3 +1,19 @@
+/-!
+Scope clarification, 2026-11-12.
+
+The bounded K-recovery statements below retain their exact premises.
+A mathematical quotient used in a specification is not a requirement to store
+a persistent scalar K in production. Current CRAM intent derives K on demand
+at each winding from authentic phase-locked residue/anchor state and supports
+heterogeneous CRT trays. Garner/mixed-radix synthetic emission is retired from
+residue compute; declared reconstruction remains permitted.
+
+These proofs alone do not establish runtime source binding, state layout,
+an O(1) magnitude gauge, ciphertext refresh, or security of a full FHE system.
+The declared complexity functions are not extracted Rust operation counts.
+See https://github.com/Skyelabz210/qmnf-lean-coq-security-proofs/blob/main/docs/CRAM_INTENT_AND_PROOF_SCOPE.md
+-/
+
 /-
   K-Elimination: Exact Division in Residue Number Systems
 
