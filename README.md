@@ -26,7 +26,7 @@ or establish implementation conformance.
 
 [![Lean 4](https://img.shields.io/badge/Lean-4.27.0-blue)](https://leanprover.github.io/)
 [![Mathlib](https://img.shields.io/badge/Mathlib-4-green)](https://github.com/leanprover-community/mathlib4)
-[![Theorems](https://img.shields.io/badge/Theorems-27-brightgreen)]()
+[![Theorems](https://img.shields.io/badge/Theorems-51-brightgreen)]()
 [![Sorry](https://img.shields.io/badge/Sorry-0-success)]()
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -93,7 +93,9 @@ grep -r "sorry" KElimination.lean
 k-elimination-lean4/
 ├── KElimination.lean          # Main formalization (27 theorems)
 ├── KElimination/
-│   └── Basic.lean             # Basic definitions
+│   ├── Basic.lean             # Basic definitions
+│   ├── ExactObservation.lean  # Fiber observability layer (9 theorems)
+│   └── UniversalLift.lean     # Universal lift (15 theorems)
 ├── coq/
 │   └── K_Elimination.v        # Coq cross-validation (10 lemmas)
 ├── docs/
@@ -108,7 +110,7 @@ k-elimination-lean4/
 └── LICENSE                    # MIT
 ```
 
-## Verified Theorems (27 Total)
+## Verified Theorems (51 Total)
 
 | Category | Theorems | Count |
 |----------|----------|-------|
@@ -122,6 +124,17 @@ k-elimination-lean4/
 | Validation | `validation_v1` through `validation_v6` | 6 |
 | Division | `division_exact`, `division_correct` | 2 |
 | Completeness | `complexity_improvement`, `k_elimination_complete`, `detect_coprimality_violation` | 3 |
+| Universal Observation | `ExactObservation` module: `recoverable_iff`, `finite_program_exact`, `transduction_composes`, and peers | 9 |
+| Universal Lift | `UniversalLift` module: `phase_difference`, `lift_query_exists_iff`, `constructive_query_correct`, `target_projection`, and peers | 15 |
+
+## The Universal Lift (ported 2026-11-24)
+
+The universal layer was formalized in Theory-of-the-One and is ported here so the K-Elimination repository carries its own evolution in full.
+
+- `KElimination/ExactObservation.lean`: a query is recoverable from an observation precisely when it is constant on its fibers (`recoverable_iff`), plus refinement, finite-program, and transduction discipline.
+- `KElimination/UniversalLift.lean`: the constructive additive-group layer. The observed phase difference isolates the observer's image of the hidden displacement (`phase_difference`); the exact ambiguity of any additive observation is its difference kernel (`same_reading_iff`); an arbitrary query of the lift is recoverable iff it is constant on the kernel's ambiguity classes (`lift_query_exists_iff`); and once a concrete readout is proved on observed lift coordinates, the runtime query needs only the two authentic readings, never the source or a persistent K (`constructive_query_correct`).
+
+This is the evolution boundary: the bounded K-recovery in `KElimination.lean` becomes the two-observation query of the universal layer, with K derived on demand. See `docs/UNIVERSAL_LIFT_EVOLUTION.md` for the evolution chain and the full use inventory. Same toolchain pin (`leanprover/lean4:v4.27.0-rc1`); no new Mathlib dependency; axiom receipts are `propext`, `Classical.choice`, `Quot.sound` only, printed in-file upstream and audited at 367 theorems on 20 November 2026.
 
 ## The Core Insight
 

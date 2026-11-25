@@ -27,6 +27,8 @@ import Mathlib.Data.ZMod.Basic
 import Mathlib.Data.Nat.GCD.Basic
 import Mathlib.RingTheory.Coprime.Basic
 import Mathlib.Tactic
+import KElimination.ExactObservation
+import KElimination.UniversalLift
 
 /-!
 # K-Elimination Theorem
